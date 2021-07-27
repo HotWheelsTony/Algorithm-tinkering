@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8b8373b4-c25f-42be-8ed6-c74072e77106" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1sYAsPfb4sZ3np3jDDlR01x0E2l" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.BettererGraphsack">
+    <configuration name="BFKnapsack0N" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BFKnapsack0N" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BettererGraphsack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BettererGraphsack" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DPKnapsack0N" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DPKnapsack0N" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Graphsack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Graphsack" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnboundedKnapsack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UnboundedKnapsack" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BettererGraphsack" />
+        <item itemvalue="Application.Graphsack" />
+        <item itemvalue="Application.BFKnapsack0N" />
+        <item itemvalue="Application.DPKnapsack0N" />
+        <item itemvalue="Application.UnboundedKnapsack" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b8373b4-c25f-42be-8ed6-c74072e77106" name="Default Changelist" comment="" />
+      <created>1621039355775</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621039355775</updated>
+      <workItem from="1621039358596" duration="16757000" />
+      <workItem from="1621234062333" duration="44622000" />
+      <workItem from="1621744985614" duration="53000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1471" y="750" key="#com.intellij.debugger.actions.ViewTextAction" timestamp="1621206006310">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1471" y="750" key="#com.intellij.debugger.actions.ViewTextAction/0.0.1920.1040@0.0.1920.1040" timestamp="1621206006310" />
+    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1621417585045">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1245" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1621417585045" />
+    <state x="1338" y="284" key="#xdebugger.XInspectDialog" timestamp="1621204086036">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1338" y="284" key="#xdebugger.XInspectDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621204086036" />
+    <state x="1195" y="234" key="#xdebugger.evaluate" timestamp="1621204091320">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1195" y="234" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1621204091320" />
+    <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1621745035037">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1621745035037" />
+    <state width="914" height="374" key="GridCell.Tab.0.bottom" timestamp="1621423421899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="374" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1621423421899" />
+    <state width="914" height="374" key="GridCell.Tab.0.center" timestamp="1621423421899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="374" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1621423421899" />
+    <state width="914" height="374" key="GridCell.Tab.0.left" timestamp="1621423421898">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="374" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1621423421898" />
+    <state width="914" height="374" key="GridCell.Tab.0.right" timestamp="1621423421899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="374" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621423421899" />
+    <state width="914" height="374" key="GridCell.Tab.1.bottom" timestamp="1621423421899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="374" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1621423421899" />
+    <state width="914" height="374" key="GridCell.Tab.1.center" timestamp="1621423421899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="374" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1621423421899" />
+    <state width="914" height="374" key="GridCell.Tab.1.left" timestamp="1621423421899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="374" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1621423421899" />
+    <state width="914" height="374" key="GridCell.Tab.1.right" timestamp="1621423421899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="374" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621423421899" />
+    <state x="342" y="140" key="new project wizard" timestamp="1621745035886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1621745035886" />
+    <state x="1182" y="142" key="refactoring.ChangeSignatureDialog" timestamp="1621378482077">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1182" y="142" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621378482077" />
+  </component>
+</project>
