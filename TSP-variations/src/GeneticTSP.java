@@ -1,4 +1,6 @@
-import java.io.*;
+import Common.Node;
+import Common.Parser;
+
 import java.util.*;
 
 public class GeneticTSP {
@@ -9,6 +11,7 @@ public class GeneticTSP {
     public static final double CROSSOVER_RATE = 0.99;
     public static final int ELITISM = 3;
     public static final int TOURNAMENT_SIZE = 10;
+    private static final String PATH_PREFIX = "TSP-variations/";
     public int currentGen = 1;
 
     public static void main(String[] args) {
@@ -16,8 +19,10 @@ public class GeneticTSP {
     }
 
     public GeneticTSP() {
-        String filename = "a280.tsp";
-        Map<Integer, Node> graph = parseFile(new File(filename));
+        String path =  PATH_PREFIX + "a280.tsp";
+
+        Map<Integer, Node> graph = Parser.parseFile(path);
+
         solve(graph);
     }
 
@@ -28,8 +33,6 @@ public class GeneticTSP {
      * @param graph
      */
     public void solve(Map<Integer, Node> graph) {
-        //int currentGen = 1;
-
         //create population by creating a set of solutions (lists of nodes)
         Population population = new Population(POPULATION_SIZE, graph);
 
@@ -41,7 +44,7 @@ public class GeneticTSP {
         //iterate until stop criteria is met
         while (currentGen <= MAX_GENERATIONS) {
 
-            //get sequence from population with shortest distance at this generation
+            //get sequence from population with the shortest distance at this generation
             List<Node> fittest = population.solutions.get(0);
             System.out.println("Fittest solution at generation " + currentGen + ": " + getDist(fittest));
 
@@ -97,7 +100,7 @@ public class GeneticTSP {
                 //create child
                 List<Node> child = new ArrayList<>();
 
-                //create a new solution with half and half of both parents sequences
+                //create a new solution with half-and-half of both parents sequences
                 int splitIndex = (int) (Math.random() * parent1.size());
 
                 for (int j = 0; j < parent1.size(); ++j) {
@@ -200,55 +203,6 @@ public class GeneticTSP {
         }
         return distance;
     }
-
-    /**
-     * Parses a euclidean 2d TSP file into Nodes
-     *
-     * @param file the file to be passed
-     * @return a map of nodes with the corresponding data
-     */
-    public Map<Integer, Node> parseFile(File file) {
-        Map<Integer, Node> nodes = new HashMap<>();
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line;
-
-            //skip first few lines of description
-            for (int i = 0; i < 6; ++i) {
-                reader.readLine();
-            }
-
-            while ((line = reader.readLine()) != null) {
-                //if this is the end of the file, break
-                if (line.equals("EOF")) {
-                    break;
-                }
-
-                //trim whitespace and split line into tokens
-                String[] data = line.trim().split("\\s+");
-
-                int id = Integer.parseInt(data[0]);
-                int x = Integer.parseInt(data[1]);
-                int y = Integer.parseInt(data[2]);
-
-                //create a new node with this data
-                Node node = new Node(id, x, y);
-
-                //add this new node to the map
-                nodes.put(id, node);
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("Error parsing file: " + e.getMessage());
-        }
-
-        //return the map of nodes
-        return nodes;
-    }
-
 
     /**
      * Class for storing a collection of solutions or "individuals"
