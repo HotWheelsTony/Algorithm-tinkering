@@ -1,10 +1,9 @@
 import Common.Node;
-
-import java.io.*;
+import Common.Parser;
 import java.util.*;
 
 
-public class SimAnnealing {
+public class SimulatedAnnealing {
 
 
     public static final double COOLING_RATE = 0.009;
@@ -15,13 +14,12 @@ public class SimAnnealing {
 
 
     public static void main(String[] args) {
-        String filename = "a280.tsp";
-        new SimAnnealing(filename);
+        new SimulatedAnnealing();
     }
 
 
-    public SimAnnealing(String filename) {
-        Map<Integer, Node> graph = parseFile(new File(filename));
+    public SimulatedAnnealing() {
+        Map<Integer, Node> graph = Parser.parseFile("a280.tsp");
         doAnnealing(graph);
     }
 
@@ -83,6 +81,7 @@ public class SimAnnealing {
         return copy;
     }
 
+
     /**
      * Calculates the acceptance probability
      */
@@ -98,12 +97,12 @@ public class SimAnnealing {
         return p > rand;
     }
 
+
     public boolean criteriaMet(int iteration) {
         return !(iteration < NUM_ITERATIONS
                 && temp > TEMP_LIMIT);
     }
 
-    int printy = 0;
 
     public void doAnnealing(Map<Integer, Node> graph) {
         //create first random solution
@@ -127,10 +126,8 @@ public class SimAnnealing {
                 //if it is then assign it as current best solution
                 currentBestSolution = neighbourSolution;
 
-
                 //FIXME
                 bestFound = getDist(currentBestSolution);
-                printy = bestFound;
 
                 //else if see if it's possible to move to this neighbour solution even though it's worse
             } else if (acceptable(getDist(neighbourSolution), getDist(currentBestSolution))) {
@@ -149,7 +146,6 @@ public class SimAnnealing {
         System.out.println("Best solution found: " + bestFound);
         System.out.println("Actual solution found: " + getDist(currentBestSolution));
         System.out.println("Iterations: " + iteration);
-
     }
 
 
@@ -208,61 +204,13 @@ public class SimAnnealing {
 
         System.out.println("Solution distance: " + getDist(bestSolution));
         System.out.println("Sequence: ");
+
         for (Node node : currentSolution) {
 
         }
 
         System.out.println("Iterations: " + rec);
-
     }
 
-
-    /**
-     * Parses a euclidean 2d TSP file into Nodes
-     *
-     * @param file the file to be passed
-     * @return a map of nodes with the corresponding data
-     */
-    public Map<Integer, Node> parseFile(File file) {
-        Map<Integer, Node> nodes = new HashMap<>();
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line;
-
-            //skip first few lines of description
-            for (int i = 0; i < 6; ++i) {
-                reader.readLine();
-            }
-
-            while ((line = reader.readLine()) != null) {
-                //if this is the end of the file, break
-                if (line.equals("EOF")) {
-                    break;
-                }
-
-                //trim whitespace and split line into tokens
-                String[] data = line.trim().split("\\s+");
-
-                int id = Integer.parseInt(data[0]);
-                int x = Integer.parseInt(data[1]);
-                int y = Integer.parseInt(data[2]);
-
-                //create a new node with this data
-                Node node = new Node(id, x, y);
-
-                //add this new node to the map
-                nodes.put(id, node);
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("Error parsing file: " + e.getMessage());
-        }
-
-        //return the map of nodes
-        return nodes;
-    }
 
 }

@@ -13,10 +13,12 @@ import java.util.stream.Stream;
  */
 public class Parser {
 
-    public static Map<Integer, Node> parseFile(String path) {
+    private static final String PATH_PREFIX = "TSP-variations/TSPDatasets/";
+
+    public static Map<Integer, Node> parseFile(String fileName) {
         Map<Integer, Node> nodes = new HashMap<>();
 
-        try (Stream<String> fileStream = Files.lines(Path.of(path))) {
+        try (Stream<String> fileStream = Files.lines(Path.of(PATH_PREFIX + fileName))) {
             nodes = fileStream
                     .skip(6)
                     .filter(line -> !line.toLowerCase().contains("eof"))
@@ -31,9 +33,12 @@ public class Parser {
                     ));
 
         } catch (IOException e) {
-            System.out.println("Error parsing file: " + e.getMessage());
+            System.out.println("Error parsing file: " + e);
+            System.exit(1);
         }
 
         return nodes;
     }
+
+
 }

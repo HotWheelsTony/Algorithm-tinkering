@@ -1,9 +1,10 @@
 import Common.Node;
+import Common.Parser;
 
 import java.io.*;
 import java.util.*;
 
-public class Approx {
+public class Approximate {
 
     public static void main (String[] args) {
         //below are the tsp files I used to test my program
@@ -38,20 +39,20 @@ public class Approx {
         String filename = "eil101.tsp";
         String solution = "eil101.opt.tour.tsp";
 
-        new Approx(filename, solution);
+        new Approximate(solution);
     }
 
 
-    public Approx (String filename, String solutionFile) {
-        List<Integer> optTour = parseSolution(new File(solutionFile));
-        File f = new File(filename);
-        Map<Integer, Node> nodes = parseFile(f);
+    public Approximate(String solutionFile) {
+//        List<Integer> optTour = parseSolution(new File(solutionFile));
+
+        Map<Integer, Node> nodes = Parser.parseFile("a280.tsp");
 
         //solve and check against optimal solution
-        checkSolution(optTour, nodes);
+//        checkSolution(optTour, nodes);
         solve(nodes);
-
     }
+
 
     /**
      * Solve this TSP problem approximately
@@ -70,7 +71,7 @@ public class Approx {
         visitedNodes.add(root);
 
         //from root explore each node with the next shortest distance
-        //get min from this nodes distances key set, this key will retrieve the closest node
+        //get min from this node's distances key set, this key will retrieve the closest node
 
         Node currNode = root;
 
@@ -109,7 +110,6 @@ public class Approx {
     }
 
 
-
     /**
      * Finds the node to start at, this node being the node
      * with the smallest average distance to every other node
@@ -118,7 +118,7 @@ public class Approx {
      * @return the node with the lowest avg distance
      */
     public Node getStartNode (Map<Integer, Node> graph) {
-        //start at node with lowest average distance to all other nodes
+        //start at node with the lowest average distance to all other nodes
         Map<Integer, Integer> avgDists = new HashMap<>();
 
         //put each avg dist in the map with node id as key
@@ -137,55 +137,6 @@ public class Approx {
         //make sure min isn't null
         assert min != null;
         return graph.get(min.getKey());
-    }
-
-
-    /**
-     * Parses a euclidean 2d TSP file into Nodes
-     *
-     * @param file the file to be passed
-     * @return a map of nodes with the corresponding data
-     */
-    public Map<Integer, Node> parseFile (File file) {
-        Map<Integer, Node> nodes = new HashMap<>();
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line;
-
-            //skip first few lines of description
-            for (int i = 0; i < 6; ++i) {
-                reader.readLine();
-            }
-
-            while ((line = reader.readLine()) != null) {
-                //if this is the end of the file, break
-                if (line.equals("EOF")) {
-                    break;
-                }
-
-                //trim whitespace and split line into tokens
-                String[] data = line.trim().split("\\s+");
-
-                int id = Integer.parseInt(data[0]);
-                int x = Integer.parseInt(data[1]);
-                int y = Integer.parseInt(data[2]);
-
-                //create a new node with this data
-                Node node = new Node(id, x, y);
-
-                //add this new node to the map
-                nodes.put(id, node);
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("Error parsing file: " + e.getMessage());
-        }
-
-        //return the map of nodes
-        return nodes;
     }
 
 

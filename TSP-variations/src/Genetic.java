@@ -3,7 +3,7 @@ import Common.Parser;
 
 import java.util.*;
 
-public class GeneticTSP {
+public class Genetic {
 
     public static final int MAX_GENERATIONS = 1000;
     public static final int POPULATION_SIZE = 250;
@@ -11,17 +11,14 @@ public class GeneticTSP {
     public static final double CROSSOVER_RATE = 0.99;
     public static final int ELITISM = 3;
     public static final int TOURNAMENT_SIZE = 10;
-    private static final String PATH_PREFIX = "TSP-variations/";
     public int currentGen = 1;
 
     public static void main(String[] args) {
-        new GeneticTSP();
+        new Genetic();
     }
 
-    public GeneticTSP() {
-        String path =  PATH_PREFIX + "a280.tsp";
-
-        Map<Integer, Node> graph = Parser.parseFile(path);
+    public Genetic() {
+        Map<Integer, Node> graph = Parser.parseFile("a280.ts");
 
         solve(graph);
     }
