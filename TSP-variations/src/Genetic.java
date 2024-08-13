@@ -18,7 +18,7 @@ public class Genetic {
     }
 
     public Genetic() {
-        Map<Integer, Node> graph = Parser.parseFile("a280.ts");
+        Map<Integer, Node> graph = Parser.parseFile("a280.tsp");
 
         solve(graph);
     }
